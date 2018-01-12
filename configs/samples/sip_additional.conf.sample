@@ -1,0 +1,7 @@
+[admin]
+dtmfmode=rfc2833
+qualify=yes
+secret=password
+context=from-internal
+host=dynamic
+type=friend

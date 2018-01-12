@@ -860,3 +860,17 @@ exten => _X.,n,Return()
 ; "core show functions" will list all dialplan functions
 ; "core show function <COMMAND>" will show you more information about
 ; one function. Remember that function names are UPPER CASE.
+
+[from-internal]
+include => app-confbridge
+include => app-extension
+
+[app-confbridge]
+exten => 64321,1,Answer()
+exten => 64321,2,ConfBridge(64321)
+
+exten => 64322,1,Answer()
+exten => 64322,2,ConfBridge(64322)
+
+[app-extension]
+exten => _X.,1,Dial(SIP/${EXTEN})
