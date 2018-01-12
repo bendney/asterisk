@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Asterisk Project : Asterisk 14 Configuration_res_resolver_unbound</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Asterisk Project</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Asterisk-14-Command-Reference_35816095.html">Asterisk 14 Command Reference</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Asterisk-14-Module-Configuration_35816110.html">Asterisk 14 Module Configuration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Asterisk Project : Asterisk 14 Configuration_res_resolver_unbound
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> Wiki Bot</span>, last modified on Jul 25, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    
+
+<p>This configuration documentation is for functionality provided by <code>res_resolver_unbound</code>.</p>
+
+<h2 id="Asterisk14Configuration_res_resolver_unbound-resolver_unbound.conf">resolver_unbound.conf</h2>
+
+<h3 id="Asterisk14Configuration_res_resolver_unbound-globals">globals</h3>
+
+<p>Options that apply globally to res_resolver_unbound</p>
+
+<h4 id="Asterisk14Configuration_res_resolver_unbound-ConfigurationOptionReference">Configuration Option Reference</h4>
+
+<div class="table-wrap"><table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh"><p> Option Name </p></th>
+<th class="confluenceTh"><p> Type </p></th>
+<th class="confluenceTh"><p> Default Value </p></th>
+<th class="confluenceTh"><p> Regular Expression </p></th>
+<th class="confluenceTh"><p> Description </p></th>
+</tr>
+<tr>
+<td class="confluenceTd"><p> <a href="#Asterisk14Configuration_res_resolver_unbound-globals_hosts"><code>hosts</code></a> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> Full path to an optional hosts file </p></td>
+</tr>
+<tr>
+<td class="confluenceTd"><p> <a href="#Asterisk14Configuration_res_resolver_unbound-globals_resolv"><code>resolv</code></a> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> Full path to an optional resolv.conf file </p></td>
+</tr>
+<tr>
+<td class="confluenceTd"><p> <a href="#Asterisk14Configuration_res_resolver_unbound-globals_nameserver"><code>nameserver</code></a> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> Nameserver to use for queries </p></td>
+</tr>
+<tr>
+<td class="confluenceTd"><p> <a href="#Asterisk14Configuration_res_resolver_unbound-globals_debug"><code>debug</code></a> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> Unbound debug level </p></td>
+</tr>
+<tr>
+<td class="confluenceTd"><p> <a href="#Asterisk14Configuration_res_resolver_unbound-globals_ta_file"><code>ta_file</code></a> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> </p></td>
+<td class="confluenceTd"><p> Trust anchor file </p></td>
+</tr>
+</tbody></table></div>
+
+<h4 id="Asterisk14Configuration_res_resolver_unbound-ConfigurationOptionDescriptions">Configuration Option Descriptions</h4>
+
+<p><span class="confluence-anchor-link" id="Asterisk14Configuration_res_resolver_unbound-globals_hosts"></span></p>
+<h5 id="Asterisk14Configuration_res_resolver_unbound-hosts">hosts</h5>
+
+<p>Hosts specified in a hosts file will be resolved within the resolver itself. If a value of system is provided the system-specific file will be used.</p>
+
+
+<p><span class="confluence-anchor-link" id="Asterisk14Configuration_res_resolver_unbound-globals_resolv"></span></p>
+<h5 id="Asterisk14Configuration_res_resolver_unbound-resolv">resolv</h5>
+
+<p>The resolv.conf file specifies the nameservers to contact when resolving queries. If a value of system is provided the system-specific file will be used. If provided alongside explicit nameservers the nameservers contained within the resolv.conf file will be used after all others.</p>
+
+
+<p><span class="confluence-anchor-link" id="Asterisk14Configuration_res_resolver_unbound-globals_nameserver"></span></p>
+<h5 id="Asterisk14Configuration_res_resolver_unbound-nameserver">nameserver</h5>
+
+<p>An explicit nameserver can be specified which is used for resolving queries. If multiple nameserver lines are specified the first will be the primary with failover occurring, in order, to the other nameservers as backups. If provided alongside a resolv.conf file the nameservers explicitly specified will be used before all others.</p>
+
+
+<p><span class="confluence-anchor-link" id="Asterisk14Configuration_res_resolver_unbound-globals_debug"></span></p>
+<h5 id="Asterisk14Configuration_res_resolver_unbound-debug">debug</h5>
+
+<p>The debugging level for the unbound resolver. While there is no explicit range generally the higher the number the more debug is output.</p>
+
+
+<p><span class="confluence-anchor-link" id="Asterisk14Configuration_res_resolver_unbound-globals_ta_file"></span></p>
+<h5 id="Asterisk14Configuration_res_resolver_unbound-ta_file">ta_file</h5>
+
+<p>Full path to a file with DS and DNSKEY records in zone file format. This file is provided to unbound and is used as a source for trust anchors.</p>
+
+
+
+<h3 id="Asterisk14Configuration_res_resolver_unbound-ImportVersion">Import Version</h3>
+
+<p>This documentation was imported from Asterisk Version GIT-14-46b4e67</p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 25, 2016 16:59</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

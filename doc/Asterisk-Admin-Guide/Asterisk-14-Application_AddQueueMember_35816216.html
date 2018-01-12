@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Asterisk Project : Asterisk 14 Application_AddQueueMember</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Asterisk Project</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Asterisk-14-Command-Reference_35816095.html">Asterisk 14 Command Reference</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Asterisk-14-Dialplan-Applications_35816102.html">Asterisk 14 Dialplan Applications</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Asterisk Project : Asterisk 14 Application_AddQueueMember
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> Wiki Bot</span> on Jul 22, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Asterisk14Application_AddQueueMember-AddQueueMember()">AddQueueMember()</h1>
+
+<h3 id="Asterisk14Application_AddQueueMember-Synopsis">Synopsis</h3>
+
+<p>Dynamically adds queue members.</p>
+
+<h3 id="Asterisk14Application_AddQueueMember-Description">Description</h3>
+
+<p>Dynamically adds interface to an existing queue. If the interface is already in the queue it will return an error.</p>
+
+<p>This application sets the following channel variable upon completion:</p>
+
+<ul>
+	<li><code>AQMSTATUS</code> - The status of the attempt to add a queue member as a text string.
+	<ul>
+		<li>ADDED</li>
+		<li>MEMBERALREADY</li>
+		<li>NOSUCHQUEUE</li>
+	</ul>
+	</li>
+</ul>
+
+
+<h3 id="Asterisk14Application_AddQueueMember-Syntax">Syntax</h3>
+
+
+<div class="preformatted panel" style="border-width: 1px;"><div class="preformattedContent panelContent">
+<pre>AddQueueMember(queuename,[interface,[penalty,[options,[membername,[stateinterface]]]]])</pre>
+</div></div>
+
+<h5 id="Asterisk14Application_AddQueueMember-Arguments">Arguments</h5>
+
+<ul>
+	<li><code>queuename</code></li>
+	<li><code>interface</code></li>
+	<li><code>penalty</code></li>
+	<li><code>options</code></li>
+	<li><code>membername</code></li>
+	<li><code>stateinterface</code></li>
+</ul>
+
+
+<h3 id="Asterisk14Application_AddQueueMember-SeeAlso">See Also</h3>
+
+<ul>
+	<li><a href="Asterisk-14-Application_Queue_35816215.html">Asterisk 14 Application_Queue</a></li>
+	<li><a href="Asterisk-14-Application_QueueLog_35816220.html">Asterisk 14 Application_QueueLog</a></li>
+	<li><a href="Asterisk-14-Application_AddQueueMember_35816216.html">Asterisk 14 Application_AddQueueMember</a></li>
+	<li><a href="Asterisk-14-Application_RemoveQueueMember_35816217.html">Asterisk 14 Application_RemoveQueueMember</a></li>
+	<li><a href="Asterisk-14-Application_PauseQueueMember_35816218.html">Asterisk 14 Application_PauseQueueMember</a></li>
+	<li><a href="Asterisk-14-Application_UnpauseQueueMember_35816219.html">Asterisk 14 Application_UnpauseQueueMember</a></li>
+	<li><a href="Asterisk-14-Function_QUEUE_VARIABLES_35816221.html">Asterisk 14 Function_QUEUE_VARIABLES</a></li>
+	<li><a href="Asterisk-14-Function_QUEUE_MEMBER_35816222.html">Asterisk 14 Function_QUEUE_MEMBER</a></li>
+	<li><a href="Asterisk-14-Function_QUEUE_MEMBER_COUNT_35816223.html">Asterisk 14 Function_QUEUE_MEMBER_COUNT</a></li>
+	<li><a href="Asterisk-14-Function_QUEUE_EXISTS_35816224.html">Asterisk 14 Function_QUEUE_EXISTS</a></li>
+	<li><a href="Asterisk-14-Function_QUEUE_GET_CHANNEL_35816225.html">Asterisk 14 Function_QUEUE_GET_CHANNEL</a></li>
+	<li><a href="Asterisk-14-Function_QUEUE_WAITING_COUNT_35816226.html">Asterisk 14 Function_QUEUE_WAITING_COUNT</a></li>
+	<li><a href="Asterisk-14-Function_QUEUE_MEMBER_LIST_35816227.html">Asterisk 14 Function_QUEUE_MEMBER_LIST</a></li>
+	<li><a href="Asterisk-14-Function_QUEUE_MEMBER_PENALTY_35816228.html">Asterisk 14 Function_QUEUE_MEMBER_PENALTY</a></li>
+</ul>
+
+
+
+<h3 id="Asterisk14Application_AddQueueMember-ImportVersion">Import Version</h3>
+
+<p>This documentation was imported from Asterisk Version GIT-master-7d17164</p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 25, 2016 16:58</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

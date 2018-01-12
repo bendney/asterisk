@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Asterisk Project : Upgrading to Asterisk 14</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Asterisk Project</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Asterisk Project : Upgrading to Asterisk 14
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+    
+            Created by <span class='author'> George Joseph</span>, last modified by <span class='editor'> Mark Michelson</span> on Jul 25, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="UpgradingtoAsterisk14-Overview">Overview</h1><p>As Asterisk 14 is built on the architecture introduced in Asterisk 12 and continued in Asterisk 13, users upgrading to Asterisk 14 from an older version of Asterisk should be aware of the architectural changes that were made in the previous Standard release. It is recommended that you review:</p><ul><li>The upgrade notes on this page</li><li>The <a href="New-in-14_35816091.html">New in 14</a> information, which lists the major new features in Asterisk 14</li><li>The notes on <a href="https://wiki.asterisk.org/wiki/display/AST/Upgrading+to+Asterisk+12">Upgrading to Asterisk 13</a> <strong>if</strong> you are upgrading from a version of Asterisk prior to Asterisk 13</li><li>The notes on what is <a href="https://wiki.asterisk.org/wiki/display/AST/New+in+12">New in 13</a> <strong>if</strong> if you are upgrading from a version of Asterisk prior to Asterisk 13.</li></ul><h2 id="UpgradingtoAsterisk14-ARI">ARI</h2><ul><li><p>The policy for when to send <code>Dial</code> events has changed. Previously, <code>Dial</code> events were sent on the calling channel's topic. However, starting in Asterisk 14, if there is no calling channel on which to send the event, the event is instead sent on the called channel's topic. Note that for the ARI channels resource's dial operation, this means that the <code>Dial</code> events will always be sent on the called channel's topic. </p></li></ul><h2 id="UpgradingtoAsterisk14-ChannelDrivers">Channel Drivers</h2><h3 id="UpgradingtoAsterisk14-chan_dahdi">chan_dahdi</h3><ul><li>For users using the FXO port (FXS signaling) distinctive ring detection feature, you will need to adjust the <code>dringX</code> count values. The count values now only record ring end events instead of any DAHDI event. A ring-ring-ring pattern would exceed the pattern limits and stop Caller-ID detection.</li></ul><h3 id="UpgradingtoAsterisk14-chan_sip">chan_sip</h3><ul><li>The SIP dial string has been extended past the <code>[!dnid]</code> option by another exclamation mark: <code>[!dnid[!fromuri]</code>. An exclamation mark in the To-URI will now mean changes to the From-URI.</li></ul><h2 id="UpgradingtoAsterisk14-Core">Core</h2><ul><li>The REF_DEBUG compiler flag is now used to enable refdebug by default.  The setting can be overridden in asterisk.conf by setting refdebug in the options category. No recompile is required to enable/disable it.</li><li>Modified processing of command-line options to first parse only what is necessary to read asterisk.conf. Once asterisk.conf is fully loaded, the remaining options are processed. The -X option now applies to asterisk.conf only. To enable #exec for other config files you must set <code>execincludes=yes</code> in asterisk.conf. Any other option set on the command-line will now override the equivalent setting from asterisk.conf.</li></ul><h2 id="UpgradingtoAsterisk14-AMI"><span style="color: rgb(133,120,102);">AMI</span></h2><ul><li>The <code>ModuleCheck</code> Action's Version key will no longer show the moduleversion. The value will always be blank.</li><li><p>The Command action now sends the output from the CLI command as a series of Output headers for each line instead of as a block of text with the <code>--END COMMAND--</code> delimiter to match the output from other actions.</p></li><li><p>Commands that fail to execute (no such command, invalid syntax etc.) now return an Error response instead of Success.</p></li></ul><h2 id="UpgradingtoAsterisk14-CLI">CLI</h2><ul><li><p>The <code>core show file version</code> command has been removed. When Asterisk moved to Git, the source control version support was removed. As a result, the CLi command was no longer useful and was removed as well.</p></li></ul><h2 id="UpgradingtoAsterisk14-Logging"><span style="color: rgb(133,120,102);">Logging</span></h2><ul><li>The first callid created is now 1 instead of 0. The value 0 is now reserved to represent a lack of callid.</li></ul><h2 id="UpgradingtoAsterisk14-app_amd"><span style="color: rgb(133,120,102);">app_amd</span></h2><ul><li>The <code>maximum_number_of_words</code> configuration option and parameter to the AMD application previously did not match the documented functionality + variable name. In Asterisk 13, a value of '3' would mean that if '3' words were detected, the result would be detection as a 'MACHINE'. As of this version, the value reflects the maximum words that if EXCEEDED (rather than reached), would result in detection as a machine. This means that you should update this value to be one higher than your previous value, if your previous value was working well for you.</li></ul><p> </p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jul 25, 2016 16:57</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
